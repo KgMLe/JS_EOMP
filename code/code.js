@@ -2,73 +2,82 @@
 let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localStorage.getItem('prodList')) : localStorage.setItem('prodList', JSON.stringify(
   [
   {
-              id: 1,
-              description:'',
-              src: 'https://i.postimg.cc/NMN0gR6d/gucci.webp',
-              brand:'Gucci',
-              price: 'R20 000'
-          },
-          {
-              id: 2,
-              src: 'https://i.postimg.cc/SNYKh2JG/guess.jpg', 
-              brand: 'Guess',
-              price: 'R2 000'
-          },
-          {
-              id: 3,
-              src: 'https://i.postimg.cc/4yqNcZFt/rayban.webp',  
-              brand: 'Ray-Bans',
-              price: 'R 300'
-          },
-          {   id: 4,
-              src: 'https://i.postimg.cc/prpLyykR/police.jpg', 
-              brand: 'Police',
-              price: 'R7 000',
-          },
-          {
-              id: 5,
-              src: 'https://i.postimg.cc/Y929KdW4/polar.jpg', 
-              brand: 'Polar',
-              price: 'R2 000',
-          },
-          {
-              id: 6,
-              src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
-              brand: 'GalXBoy',
-              price: 'R800',
-          },
+    id: 1,
+    description:'',
+    src: 'https://i.postimg.cc/NMN0gR6d/gucci.webp',
+    brand:'Gucci',
+    price: 7000
+},
+{
+    id: 2,
+    src: 'https://i.postimg.cc/SNYKh2JG/guess.jpg', 
+    brand: 'Guess',
+    description:'',
+    price: 2000
+},
+{
+    id: 3,
+    src: 'https://i.postimg.cc/4yqNcZFt/rayban.webp',  
+    brand: 'Ray-Bans',
+    description:'',
+    price: 300
+},
+{   id: 4,
+    src: 'https://i.postimg.cc/prpLyykR/police.jpg', 
+    brand: 'Police',
+    description:'',
+    price: 8000,
+},
+{
+    id: 5,
+    src: 'https://i.postimg.cc/Y929KdW4/polar.jpg', 
+    brand: 'Polar',
+    description:'',
+    price: 2000,
+},
+{
+    id: 6,
+    src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
+    brand: 'GalXBoy',
+    description:'',
+    price: 800
+},
 
-          {
-            id: 7,
-            src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
-            brand: 'GalXBoy',
-            price: 'R800',
-          },
+{
+  id: 7,
+  src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
+  brand: 'GalXBoy',
+  description:'',
+  price: 800
+},
 
-          {
-           id: 8,
-           src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
-           brand: 'GalXBoy',
-           price: 'R800',
-          },
+{
+ id: 8,
+ src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
+ brand: 'GalXBoy',
+ description:'',
+ price: 800
+},
 
-         {
-           id: 9,
-           src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
-           brand: 'GalXBoy',
-           price: 'R800',
-          },
+{
+ id: 9,
+ src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
+ brand: 'GalXBoy',
+ description:'',
+ price: 800
+},
 
-          {
-           id: 10,
-           src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
-           brand: 'GalXBoy',
-           price: 'R800',
-          },
+{
+ id: 10,
+ src: 'https://i.postimg.cc/DfMzHdyZ/galxb.webp', 
+ brand: 'GalXBoy',
+ description:'',
+ price: 800
+}
 ]))
         ;
 
-          let divProducts = document.querySelector('.products');
+let divProducts = document.querySelector('#products');
 products.forEach((data)=> {
   divProducts.innerHTML += `
   <div class="card" style="width: 16rem;">
@@ -79,7 +88,7 @@ products.forEach((data)=> {
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Description</li>
-    <li class="list-group-item">${data.price}</li>
+    <li class="list-group-item">R${data.price}</li>
   </ul>
   <div class="card-body">
   <button class="btn btn-light" onclick="addToCart(${data.id})" id="checkout">Add to Cart <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket3-fill" viewBox="0 0 16 16">
