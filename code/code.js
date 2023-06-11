@@ -106,8 +106,19 @@ products.forEach((data)=> {
 // also find out which array to use to push it to the checkout page. 
 // now this probable will work but using a constructor function since we have not yet done classes
 
+let checkout = document.getElementById("#checkOut")
+
+function addToCart(data) {
+  let cart = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : localStorage.setItem('cart', JSON.stringify([]))
+  cart.push(data)
+  localStorage.setItem('cart', JSON.stringify(cart))
+  alert('Item added to cart')
+} 
 
 
 
 
+
+
+//CHECKOUT
 

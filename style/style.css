@@ -6,3 +6,29 @@ img[alt='logo']{
   height: 51px;
 }
 
+*{
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
+/* landing page */
+body{
+background-image: url('https://i.postimg.cc/g0FMWYyR/666c2cce6f72699135ffcf.webp');
+background-repeat: no-repeat;
+
+}
+
+h1{
+font-size: 5rem;
+text-transform: capitalize;
+text-shadow: 3px 3px 3px #96a37a, 3px 2px 3px #b5c897;
+font-weight: 400;
+line-height: 44px;
+color: #2a2626;
+text-decoration-line: underline;
+text-overflow: initial;
+}
+
+.hmeBottom{
+background-color:#fffbd8;
+}
