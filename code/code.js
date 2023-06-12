@@ -117,8 +117,5 @@ function addToCart(data) {
 
 
 
-
-
-
 //CHECKOUT
 
