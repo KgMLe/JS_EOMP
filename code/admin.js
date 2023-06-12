@@ -99,7 +99,7 @@ sortBtn.addEventListener('click', sortProd)
 function sortProd(products){
 //     e.preventDefault();
 //     products = products.sort((a,b)=>{
-//         if(a.name < b.name){
+//         if(a.brand < b.brand){
 //             return -1;
         
 //         } else {
