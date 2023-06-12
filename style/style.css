@@ -12,11 +12,12 @@ img[alt='logo']{
 
 
 /* landing page */
-body{
+/* body{
 background-image: url('https://i.postimg.cc/g0FMWYyR/666c2cce6f72699135ffcf.webp');
 background-repeat: no-repeat;
+background-size: cover;
 
-}
+} */
 
 h1{
 font-size: 5rem;
@@ -29,6 +30,9 @@ text-decoration-line: underline;
 text-overflow: initial;
 }
 
-.hmeBottom{
+/* .hmeBottom{
 background-color:#fffbd8;
-}
+} */
+
+
+
