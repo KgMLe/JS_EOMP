@@ -108,14 +108,15 @@ products.forEach((data)=> {
 
 let checkout = document.getElementById("#checkOut")
 
-function addToCart(data) {
+function addToCart(id) {
   let cart = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : localStorage.setItem('cart', JSON.stringify([]))
-  cart.push(data)
+  cart.push(id)
   localStorage.setItem('cart', JSON.stringify(cart))
   alert('Item added to cart')
 } 
 
 
 
-//CHECKOUT
+
+
 
