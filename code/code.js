@@ -1,19 +1,22 @@
 // PRODUCTS LISTINGS
-let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localStorage.getItem('prodList')) : localStorage.setItem('prodList', JSON.stringify(
+let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localStorage.getItem('prodList')) : 
+  localStorage.setItem('prodList', 
+    JSON.stringify(
   [
   {
     id: 1,
-    description:'',
+   
     src: 'https://i.postimg.cc/NMN0gR6d/gucci.webp',
     brand:'Gucci',
-    price: 7000
+    description:'',
+    price: 700
 },
 {
     id: 2,
     src: 'https://i.postimg.cc/SNYKh2JG/guess.jpg', 
     brand: 'Guess',
     description:'',
-    price: 2000
+    price: 200
 },
 {
     id: 3,
@@ -26,14 +29,14 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
     src: 'https://i.postimg.cc/prpLyykR/police.jpg', 
     brand: 'Police',
     description:'',
-    price: 8000,
+    price: 800,
 },
 {
     id: 5,
     src: 'https://i.postimg.cc/Y929KdW4/polar.jpg', 
     brand: 'Polar',
     description:'',
-    price: 2000,
+    price: 200,
 },
 {
     id: 6,
@@ -74,8 +77,7 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
  description:'',
  price: 800
 }
-]))
-        ;
+]));
 
 let divProducts = document.querySelector('#products');
 products.forEach((data)=> {
@@ -98,6 +100,7 @@ products.forEach((data)=> {
   </div>
 </div>
   `
+  localStorage.setItem('prodList',JSON.stringify(products))
 })
 
 // ADD TO CART FUNCTION
@@ -107,11 +110,12 @@ products.forEach((data)=> {
 // now this probable will work but using a constructor function since we have not yet done classes
 
 let checkout = document.getElementById("#checkOut")
+let cart = JSON.parse(localStorage.getItem('cartList')) ? JSON.parse(localStorage.getItem('cartList')) : localStorage.setItem('cartList', JSON.stringify([]))
 
 function addToCart(id) {
-  let cart = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : localStorage.setItem('cart', JSON.stringify([]))
+ 
   cart.push(id)
-  localStorage.setItem('cart', JSON.stringify(cart))
+  localStorage.setItem('cartList', JSON.stringify(cart))
   alert('Item added to cart')
 } 
 
