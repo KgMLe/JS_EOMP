@@ -1,5 +1,5 @@
-let checkout = JSON.parse(localStorage.getItem('prodList')) ? 
-JSON.parse(localStorage.getItem('prodList')) : [];
+let checkout = JSON.parse(localStorage.getItem('cartList')) ? 
+JSON.parse(localStorage.getItem('cartList')) : [];
 
 let cartItem = document.querySelector('.checkOut');
 
