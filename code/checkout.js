@@ -1,20 +1,22 @@
-let checkout = JSON.parse(localStorage.getItem('cartList')) ? 
+//get products in here
+let cart = JSON.parse(localStorage.getItem('cartList')) ? 
 JSON.parse(localStorage.getItem('cartList')) : [];
 
+
+localStorage.setItem('cartList',JSON.stringify(cart))
 let cartItem = document.querySelector('.checkOut');
 
-checkout.forEach((data)=> {
+cart.forEach((item)=> {
   cartItem.innerHTML += `
   <tr>
-  <th scope="row">${data.id}</th>
-  <td>${data.brand}</td>
-  <td>${data.src}</td>
-  <td>${data.description}</td>
-  <td>${data.price}</td>
+  <td>${item.brand}</td>
+  <td><img src="${item.src}" alt="" style="width: 70px;height: 60px;"></td>
+  <td>R${item.price}</td>
   <tr>
   `
-  localStorage.setItem('cardList',JSON.stringify(products))
 })
+
+// try using ternirary operators
 
 
 
