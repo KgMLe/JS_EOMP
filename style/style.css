@@ -38,19 +38,27 @@ background-color: #E8E8EA;
 
 
 .container h1{
-  padding-top: 7%;
+  padding-top: 3%;
   padding-bottom: 7%;
   font-family: 'Inter';
   font-style: normal;
-  text-shadow: 0 0 5px #5271FF;
+  /* text-shadow: 0 0 5px #5271FF; */
 }
 
 p.italic{
 font-style: italic;
 text-align: justify;
-font-size: 25px;
 
 
+
+}
+
+
+/* about container */
+#about{
+background-color: #28272C;
+color: whitesmoke;
+/* width: 50%; */
 }
 
 /*__________________________________________________________*/
@@ -59,7 +67,7 @@ font-size: 25px;
 
 
 
-/* _____________________________________________________________ */
+/* _____________________________________________________________ */  
 /* FOOTER */
 
 footer{
