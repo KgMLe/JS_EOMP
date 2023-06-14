@@ -9,7 +9,7 @@ let price = document.querySelector ('#price')
 // PRODUCTS LISTING
 // let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localStorage.getItem('prodList')) : [];
 // debugger
-let products = JSON.parse(localStorage.getItem('prodList'))
+let products = JSON.parse(localStorage.getItem('prodList')) 
         
 let divAdmin = document.querySelector('.table-group-divider');
 
@@ -41,7 +41,7 @@ function displayProd(){
 
 divAdmin.innerHTML = "" 
 // the next section of code is the inner html code of the admin page, this includes the modals that pop up for the edit and add buttons
-products.forEach ((data) => {
+products.forEach((data) => {
   divAdmin.innerHTML += `
   <tr>
   <th scope="row">${data.id}</th>
@@ -84,7 +84,7 @@ products.forEach ((data) => {
   </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-success" onClick ="editProd()" data-bs-dismiss="modal">Save Changes</button>
+    <button type="button" class="btn" onClick ="editProd()" data-bs-dismiss="modal">Save Changes</button>
   </div>
   </div>
   </div>
@@ -98,6 +98,7 @@ products.forEach ((data) => {
   `
   localStorage.setItem('prodList',JSON.stringify(products))
   });
+
 }
 displayProd()
 // __________________________________________________________________________

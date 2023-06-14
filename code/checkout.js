@@ -3,7 +3,7 @@ JSON.parse(localStorage.getItem('cartList')) : [];
 
 let cartItem = document.querySelector('.checkOut');
 
-products.forEach((data)=> {
+checkout.forEach((data)=> {
   cartItem.innerHTML += `
   <tr>
   <th scope="row">${data.id}</th>
@@ -13,7 +13,7 @@ products.forEach((data)=> {
   <td>${data.price}</td>
   <tr>
   `
-
+  localStorage.setItem('cardList',JSON.stringify(products))
 })
 
 
