@@ -15,6 +15,10 @@ body{
   background-color: white;
 }
 
+.navbar{
+
+}
+
 
 /* landing page */
 /* _________________________________________________________________ */
@@ -36,14 +40,16 @@ background-color: #E8E8EA;
 .container h1{
   padding-top: 7%;
   padding-bottom: 7%;
-  font-family: 'Abril Fatface', cursive;
+  font-family: 'Inter';
+  font-style: normal;
+  text-shadow: 0 0 5px #5271FF;
 }
 
 p.italic{
 font-style: italic;
 text-align: justify;
 font-size: 25px;
-line-height: 50px;
+
 
 }
 
@@ -118,10 +124,22 @@ footer{
 }
 
 
-/* __________________________________________________ */
-/* elements */
+/* ____________________________________________________________ */
+/* common elements shared throughout */
 
 .btn{
   background-color: #28272C;
   color: #F4F4F4;
+}
+
+.card {
+  background: #222;
+  border: 1px solid #5271FF;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+
+.col{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
 }
