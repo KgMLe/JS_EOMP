@@ -137,25 +137,26 @@ function sortAZ(){
 
 console.log(products);
 localStorage.setItem('prodList',JSON.stringify(products))
-display(displayProd)
 }
 
 // search button
 let searchBox = document.querySelector('#searchText');
 function search() {
   try {
-    let showProd = [];
-    products.forEach((product) => {
-      if (product.brand.search(searchBox.value) != -1 || product.description.search(searchBox.value) != -1) {
-        showProd.push(product);
-      }
+    let showProd = products.filter((product) => {
+      return (
+        product.brand.includes(searchBox.value) ||
+        product.description.includes(searchBox.value)
+      );
     });
 
     display(showProd);
   } catch (error) {
     console.error('An error occurred while searching:', error);
   }
+  localStorage.setItem('prodList',JSON.stringify(products))
 }
+
 
 
 // ADD TO CART FUNCTION

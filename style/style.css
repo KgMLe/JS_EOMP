@@ -13,7 +13,7 @@ img[alt='logo']{
 }
 
 .navbar{
-  background-color: #28272C;
+  background: transparent !important;
 }
 
 a.nav-link {
@@ -28,15 +28,15 @@ a.nav-link:hover {
 }
 
 .item{
-  justify-content: center;
-  padding-right: 10%;
+  justify-content: flex-end;
+  border: 50px;
 }
 
 /* landing page */
 
 #landing{
   height: fit-content;
-  background-position: right; 
+  background-position: right;
   background-image: url("https://i.postimg.cc/Y0kMzJp7/cd93a5895e6954a1457a63-removebg-preview.png");
   background-repeat: no-repeat;
   padding-top: 10.5%;
@@ -105,7 +105,6 @@ footer{
   background-color: #28272C;
   color: #F4F4F4;
   text-align: center;
-  height: 120px;
   justify-content: space-between;
 }
 
@@ -124,7 +123,7 @@ footer{
   padding: 0;
   text-decoration: none;
   text-align: center;
-  color: black;
+  color: white;
   font-size: 1.5625rem;
   font-weight: normal;
   line-height: 2em;
@@ -134,7 +133,7 @@ footer{
   margin-bottom: 0.25rem;
 }
 
-.rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
+/* .rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
   color: white;
   background: transparent;
   border-color: #923d50;
@@ -156,7 +155,7 @@ footer{
  color: white;
   background: transparent;
   border-color: #923d50;
-}
+} */
 
 
 /* ____________________________________________________________ */
