@@ -1,14 +1,10 @@
-const sortBtn = document.querySelector('#sort')
-const editBtn = document.querySelector ('#edit')
-
 let brand = document.querySelector('#brand')
 let img = document.querySelector ('#imgSrc')
 let description = document.querySelector ('#description')
 let price = document.querySelector ('#price')
 
 // PRODUCTS LISTING
-// let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localStorage.getItem('prodList')) : [];
-// debugger
+
 let products = JSON.parse(localStorage.getItem('prodList')) 
         
 let divAdmin = document.querySelector('.table-group-divider');
