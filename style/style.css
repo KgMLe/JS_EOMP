@@ -19,6 +19,7 @@ img[alt='logo']{
 a.nav-link {
   margin: 3px;
   border-radius: 50px;
+  color:#923d50;
 }
 
 a.nav-link:hover {
@@ -26,6 +27,10 @@ a.nav-link:hover {
   color: whitesmoke;
 }
 
+.item{
+  justify-content: center;
+  padding-right: 10%;
+}
 
 /* landing page */
 
@@ -35,6 +40,7 @@ a.nav-link:hover {
   background-image: url("https://i.postimg.cc/Y0kMzJp7/cd93a5895e6954a1457a63-removebg-preview.png");
   background-repeat: no-repeat;
   padding-top: 10.5%;
+  padding-right: 5%;
   padding-bottom: 7.5%;
   background-color: #28272C;
   color: white;
@@ -42,10 +48,11 @@ a.nav-link:hover {
 
 
 #heading{
-  padding-left: 14%;
+  padding-left: 10%;
   font-family: 'Inter';
   font-style: normal;
-
+  font-size: 2.8rem;
+ 
 }
 
 hr
@@ -91,9 +98,6 @@ font-weight: bold;
 
 }
 
-
-
-
 /* _____________________________________________________________ */  
 /* FOOTER */
 
@@ -131,25 +135,25 @@ footer{
 }
 
 .rounded-social-buttons .social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
-  color: black;
+  color: white;
   background: transparent;
   border-color: #923d50;
 }
 
 .rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
-  color: black;
+  color: white;
   background: transparent;
   border-color: #923d50;
 }
 
 .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
-  color: black;
+  color: white;
   background: transparent;
   border-color: #923d50;
 } 
 
 .rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
- color: black;
+ color: white;
   background: transparent;
   border-color: #923d50;
 }

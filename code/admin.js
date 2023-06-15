@@ -1,7 +1,7 @@
-let brand = document.querySelector('#brand')
-let img = document.querySelector ('#imgSrc')
-let description = document.querySelector ('#description')
-let price = document.querySelector ('#price')
+// let brand = document.querySelector('#brand')
+// let img = document.querySelector ('#imgSrc')
+// let description = document.querySelector ('#description')
+// let price = document.querySelector ('#price')
 
 // PRODUCTS LISTING
 
@@ -45,7 +45,7 @@ products.forEach((item) => {
   <td><span>${item.brand}</span></td>
   <td><img src="${item.src}" alt="" style="width: 85px;height: 60px;"></td>
   <td>${item.description}</td>
-  <td> ${item.price}</td>
+  <td> R${item.price}</td>
 
   <td><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exModal-${item.id}" >Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -64,24 +64,24 @@ products.forEach((item) => {
   <form id="editProduct-${item.id}">
   <div class="mb-3">
   <label for="brand" class="form-label">Brand</label>
-  <input type="text" class="form-control" id="brand" value="${item.brand}">
+  <input type="text" class="form-control" id="brand-${item.id}" value="${item.brand}">
   </div>
   <div class="mb-3">
   <label for="imgSrc" class="form-label">Image</label>
-  <input type="url" class="form-control" id="imgSrc" value="${item.src}" >
+  <input type="url" class="form-control" id="imgSrc-${item.id}" value="${item.src}" >
   </div>
   <div class="mb-3">
   <label for="description" class="form-label">Description</label>
-  <input type="text" class="form-control" id="description" value="${item.description}">
+  <input type="text" class="form-control" id="description-${item.id}" value="${item.description}">
   </div>
   <div class="mb-3">
   <label for="price" class="form-label">Price (R)</label>
-  <input type="number" class="form-control" id="price" value="${item.price}">
+  <input type="number" class="form-control" id="price-${item.id}" value="${item.price}">
   </div>
   </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn" onClick ="editProd('${item.id}')" data-bs-dismiss="modal">Save Changes</button>
+    <button type="button" class="btn" onClick ='new EditProduct(${JSON.stringify(item)})' data-bs-dismiss="modal">Save Changes</button>
   </div>
   </div>
   </div>
@@ -125,45 +125,45 @@ displayProd()
 
 // __________________________________________________________________________
 // EDIT PRODUCTS
-// function editProd(){
-//   function EditProduct(item) {
-//   this.id = document.querySelector(`.id-${item.id}`).value  
-//   this.brand = document.querySelector(`.brand-${item.id}`).value 
-//   this.imgSrc = document.querySelector(`.imgSrc-${item.id}`).value
-//   this.description = document.querySelector(`.description-${item.id}`).value       
-//   this.price = document.querySelector(`.price-${item.id}`).value 
-//    let index = displayContent.findIndex( f=>{
-//  return f.id === item.id
-// })
-// console.log(item.id, index);
-// newContent[index] = Object.assign({}, this)
-// localStorage.setItem('prodList',JSON.stringify(products))
-// displayProd()
-// }
-// }
 
+function EditProduct(item) {
+  this.id = item.id
+  this.brand = document.querySelector(`#brand-${item.id}`).value 
+  this.src = document.querySelector(`#imgSrc-${item.id}`).value
+  this.description = document.querySelector(`#description-${item.id}`).value       
+  this.price = document.querySelector(`#price-${item.id}`).value 
+   let index = products.findIndex( f=>{
+  return f.id === item.id
+  })
+console.log(item, index);
+products[index] = Object.assign({}, this)
 
-function editProd(id){
-  const form = document.querySelector(`#editProduct-${id}`);
-  const price = form.querySelector('#price')
-  const brand = form.querySelector('#brand')
-  const description = form.querySelector('#description')
-  const imgSrc = form.querySelector('#imgSrc')
-
-  console.log("Clicked Edit", id, price.value, brand.value, imgSrc.value, description.value)
- 
-  for (let i = 0; i < products.length; i++) {
-    if (products[i].id == id) {
-      products[i].price = parseFloat(price.value);
-      products[i].brand = brand.value;
-      products[i].description = description.value;
-      products[i].src = imgSrc.value;
-    }
-  }
-  console.log(products) 
-  localStorage.setItem('prodList',JSON.stringify(products))
-  displayProd(); 
+localStorage.setItem('prodList',JSON.stringify(products))
+displayProd()
 }
+
+
+
+// function editProd(id){
+//   const form = document.querySelector(`#editProduct-${id}`);
+//   const price = form.querySelector('#price')
+//   const brand = form.querySelector('#brand')
+//   const description = form.querySelector('#description')
+//   const imgSrc = form.querySelector('#imgSrc')
+
+ 
+//   for (let i = 0; i < products.length; i++) {
+//     if (products[i].id == id) {
+//       products[i].price = parseFloat(price.value);
+//       products[i].brand = brand.value;
+//       products[i].description = description.value;
+//       products[i].src = imgSrc.value;
+//     }
+//   }
+//   console.log(products) 
+//   localStorage.setItem('prodList',JSON.stringify(products))
+//   displayProd(); 
+// }
 
 
 
@@ -174,11 +174,9 @@ let idProd = parseInt(alert("Product deleted"))
  let target = products.find(function(find){
     return find.id == idProd;
  })
- let index = products.indexOf(target)
- console.log(index)
+let index = products.indexOf(target)
 products.splice(index,1) 
 localStorage.removeItem('prodList')
-console.log(products) 
 localStorage.setItem('prodList',JSON.stringify(products))
 displayProd(); 
 

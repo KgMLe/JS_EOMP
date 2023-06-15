@@ -1,4 +1,4 @@
-let cart = JSON.parse(localStorage.getItem('cartList')) ? 
+ let cart = JSON.parse(localStorage.getItem('cartList')) ? 
 JSON.parse(localStorage.getItem('cartList')) : [];
 
 

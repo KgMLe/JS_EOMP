@@ -79,10 +79,10 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
 ]));
 
 let divProducts = document.querySelector('#products');
-products.forEach((item)=> {
+products.forEach((item)=> { 
   divProducts.innerHTML += `
 <div class="card" style="width: 18rem;">
-<img class="card-img-top" src="${item.src}" alt="img" loading = "">
+<img class="card-img-top" src="${item.src}" alt="img" loading = "lazy">
   <div class="card-body">
     <h5 class="card-title"><span>${item.brand}</span></h5>
     <p class="card-text">${item.description}</div>
@@ -103,13 +103,59 @@ products.forEach((item)=> {
 // _____________________________________________________________________________
 //Filter and Sort for Products Page
 // Sort by price
+const showProd = products
+
+// const sortP = document.querySelector("#sortPrice")
+// sortP.addEventListener('click', sortPrice);
+
 function sortPrice(){
-   products.sort(
+   showProd.sort(
     (p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0);
+    localStorage.setItem('prodList',JSON.stringify(products))
+    display (showProd)
 }
 
 
 //sort by alphabet
+const sortAlphabet = document.querySelector("#sortAZ")
+sortAlphabet.addEventListener('click', sortAZ);
+function sortAZ(){
+  products.sort(function(a, b) {
+    const brandA = a.brand.toUpperCase(); 
+    const brandB = b.brand.toUpperCase(); 
+      
+  
+    if (brandA < brandB) {
+      return -1;
+    }
+    if (brandA > brandB) {
+      return 1;
+    }
+
+    return 0;
+  })
+
+console.log(products);
+localStorage.setItem('prodList',JSON.stringify(products))
+display(displayProd)
+}
+
+// search button
+let searchBox = document.querySelector('#searchText');
+function search() {
+  try {
+    let showProd = [];
+    products.forEach((product) => {
+      if (product.brand.search(searchBox.value) != -1 || product.description.search(searchBox.value) != -1) {
+        showProd.push(product);
+      }
+    });
+
+    display(showProd);
+  } catch (error) {
+    console.error('An error occurred while searching:', error);
+  }
+}
 
 
 // ADD TO CART FUNCTION
@@ -121,7 +167,7 @@ let cart = []
 function addToCart(item) {
  
   cart.push(item)
-  console.log(item);
+  //console.log(item);
   localStorage.setItem('cartList', JSON.stringify(cart))
   alert('Item added to cart')
 } 
