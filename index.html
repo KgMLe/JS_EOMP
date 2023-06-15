@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Optical</title>
    <!-- LOGO DISPLAY -->
-   <link rel="shortcut icon" href="https://i.postimg.cc/QdTzNp6d/Eye-Spy-e-Bay-Logo-removebg-preview.png" type="image/x-icon">
+   <link rel="shortcut icon" href="https://i.postimg.cc/cH4KmvhX/Eye-Spy-e-Bay-Logo-removebg-preview.png" type="image/x-icon">
    <!-- BOOTSTRAP AND CSS LINKS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="/style/style.css">
 </head>
 <body>
   <!-- _____________________________NAV BAR ___________________________ -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg  sticky-top">
+    
     <a class="navbar-brand" href="index.html">
-      <img src="https://i.postimg.cc/QdTzNp6d/Eye-Spy-e-Bay-Logo-removebg-preview.png" alt="logo" loading="lazy" class="logo">
+      <img src="https://i.postimg.cc/cH4KmvhX/Eye-Spy-e-Bay-Logo-removebg-preview.png" alt="logo" loading="lazy" class="logo">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" 
+    data-toggle="collapse" data-target="#navbarSupportedContent" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" 
+    aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto nav-tabs">
         <li class="nav-item">
           <a class="nav-link" href="/html/product.html">Products</a>
         </li>
@@ -38,38 +42,40 @@
 
   <!-- ________________________________HOME PAGE CONTENT___________________________ -->
 
-  <section class="container" id="landing">
+  <section id="landing">
          <div class="row">
-      <h1 class="display-6 text-md-left">SEE THE WORLD <br> THROUGH <br> STYLISH FRAMES</h1>
-      <p class="italic"> Eyeglasses are not only functional but also serve as a means of self-expression and style enhancement. At Specs, we strive to offer a seamless online shopping experience, ensuring that everyone can find the perfect frames that not only fit comfortably but also reflect their unique personality </p> 
-    </div>   
+       <hr>   
+      <h1 class="display-6 text-md-left" id="heading">SEE THE WORLD <br><br>THROUGH <br><br> STYLISH FRAMES</h1> 
+    </div>
   </section>
   <br>
-<!-- 
-  <section id="about" class="container">
-    <div class="row">
-      <p class="italic"> Eyeglasses are not only functional but also serve as a means of self-expression and style enhancement. At Specs, we strive to offer a seamless online shopping experience, ensuring that everyone can find the perfect frames that not only fit comfortably but also reflect their unique personality </p> 
-  </div> -->
-<!-- </section> -->
-<br>
+<section class="container" id="about">
+
+  <h2 class="text-md-center"><span>Why</span> We Do <span>What</span> We Do </h2>
+  <p>  Eyeglasses were originally designed purely for vision correction, but over time they evolved into a fashion accessory, with frames being crafted from various materials and adorned with decorative elements.</p>
+
+   <p> At Specs, we are dedicated to helping you discover frames that make you look and feel you best and to offer a seamless online shopping experience, ensuring that you can find the perfect frames that not only fit comfortably but also reflect your unique personality. </p>
+</section>
 
   <!-- Featured prodcuts courasel or cards -->
-  <section id="featured" class="container">
+  <section id="featured" >
     <div class="row">
-      <h4 class="text-lg-center" >FEATURED PRODUCTS</h4>
+      <hr>
+      <h3 class="text-lg-center" >FEATURED PRODUCTS</h3>
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-          <img class="card-img-top" src="https://i.postimg.cc/9Qft6xjq/16360935557651.jpg" alt="Card image cap">
+          <img class="card-img-top" src="https://i.postimg.cc/9Qft6xjq/16360935557651.jpg" alt="Card image cap" loading="lazy">
           
         </div>
         <div class="col">
-          <img class="card-img-top" src="https://i.postimg.cc/8PszvMf1/16833593271408.jpg" alt="Card image cap">
+          <img class="card-img-top" src="https://i.postimg.cc/8PszvMf1/16833593271408.jpg" alt="Card image cap" loading="lazy">
           
         </div>
         <div class="col">
-          <img class="card-img-top" src="https://i.postimg.cc/3xsNYNR3/16360764398588.jpg" alt="Card image cap">
+          <img class="card-img-top" src="https://i.postimg.cc/3xsNYNR3/16360764398588.jpg" alt="Card image cap" loading="lazy">
         </div>
       </div>
+      <br>
       <div class="d-grid gap-2 col-6 mx-auto">
         <a href="./html/product.html" class="btn" type="button" >SEE MORE</a>
       </div>
@@ -82,6 +88,7 @@
 
   <!-- FOOTER -->
   <footer>
+    
     <div class="rounded-social-buttons">
       <a class="social-button github" href="https://github.com/KgMLe" target="_blank"><i class="fab fa-github"></i></a>
       <a class="social-button linkedin" href="https://www.linkedin.com/in/kgodisho-lebopa-0a319416a/?originalSubdomain=za" target="_blank"><i class="fab fa-linkedin"></i></a>

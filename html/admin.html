@@ -16,13 +16,15 @@
 <body>
   <!-- _______________________________________NAV BAR ___________________________ -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/index.html"><img src="https://i.postimg.cc/QdTzNp6d/Eye-Spy-e-Bay-Logo-removebg-preview.png" alt="logo" loading="lazy" class="logo"></a>
+    <a class="navbar-brand" href="/index.html">
+      <img src="https://i.postimg.cc/cH4KmvhX/Eye-Spy-e-Bay-Logo-removebg-preview.png" alt="logo" loading="lazy" class="logo">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto nav-tabs" >
         <li class="nav-item">
           <a class="nav-link" href="/html/product.html">Products</a>
         </li>
@@ -54,9 +56,11 @@
         <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product(s)</h1> <!---->
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product(s)</h1> <!-- ADD PROD-->
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>  <!--close-->
           </div>
+          <div class="container">
+            <div class="row">
           <div class="modal-body">
           <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label"> Brand</label>
@@ -71,13 +75,15 @@
           <textarea class="form-control" id="description" rows="3"> </textarea>
          </div>
          <div class="mb-3">
-         <label for="exampleFormControlInput1" class="form-label"> Price</label>
+         <label for="exampleFormControlInput1" class="form-label"> Price(R)</label>
          <input type="number" class="form-control" id="price"> 
          </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-success" id="save" onclick="addProd()">Save Changes</button>
           </div>
+        </div>
+      </div>
         </div>
       </div>
     </div>
@@ -89,7 +95,7 @@
           <th scope="col">Brand</th>
           <th scope="col">Image</th>
           <th scope="col">Description</th>
-          <th scope="col">Price</th>
+          <th scope="col">Price </th>
           <th scope="col">Edit</th>
           <th scope="col">Del</th>
         </tr>
@@ -102,7 +108,9 @@
 
 
 <!-- FOOTER -->
-<footer>
+<footer style="width: 100%;">
+
+  
   <div class="rounded-social-buttons">
     <a class="social-button github" href="https://github.com/KgMLe" target="_blank"><i class="fab fa-github"></i></a>
     <a class="social-button linkedin" href="https://www.linkedin.com/in/kgodisho-lebopa-0a319416a/?originalSubdomain=za" target="_blank"><i class="fab fa-linkedin"></i></a>

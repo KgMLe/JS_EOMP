@@ -46,17 +46,17 @@ products.forEach((item) => {
   divAdmin.innerHTML += `
   <tr>
   <th scope="row">${item.id}</th>
-  <td>${item.brand}</td>
-  <td><img src="${item.src}" alt="" style="width: 100px;height: 100px;"></td>
+  <td><span>${item.brand}</span></td>
+  <td><img src="${item.src}" alt="" style="width: 85px;height: 60px;"></td>
   <td>${item.description}</td>
-  <td>R ${item.price}</td>
+  <td> ${item.price}</td>
 
-  <td><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exModal" >Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+  <td><button class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exModal-${item.id}" >Edit <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
   </svg>
   </button>
-  <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exModal-${item.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
   <div class="modal-header">
@@ -65,7 +65,7 @@ products.forEach((item) => {
   </div>
  
   <div class="modal-body" >
-  <form id="editProduct">
+  <form id="editProduct-${item.id}">
   <div class="mb-3">
   <label for="brand" class="form-label">Brand</label>
   <input type="text" class="form-control" id="brand" value="${item.brand}">
@@ -85,7 +85,7 @@ products.forEach((item) => {
   </form>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn" onClick ="editProd()" data-bs-dismiss="modal">Save Changes</button>
+    <button type="button" class="btn" onClick ="editProd('${item.id}')" data-bs-dismiss="modal">Save Changes</button>
   </div>
   </div>
   </div>
@@ -129,21 +129,44 @@ displayProd()
 
 // __________________________________________________________________________
 // EDIT PRODUCTS
-function editProd(){
-    function EditProduct(item) {
-    this.id = document.querySelector(`.id-${item.id}`).value  
-    this.brand = document.querySelector(`.brand-${item.id}`).value 
-    this.imgSrc = document.querySelector(`.imgSrc-${item.id}`).value
-    this.description = document.querySelector(`.description-${item.id}`).value       
-    this.price = document.querySelector(`.price-${item.id}`).value 
-     let index = displayContent.findIndex( f=>{
-   return f.id === item.id
-  })
- console.log(item.id, index);
- newContent[index] = Object.assign({}, this)
- localStorage.setItem('prodList',JSON.stringify(products))
- displayProd()
+// function editProd(){
+//   function EditProduct(item) {
+//   this.id = document.querySelector(`.id-${item.id}`).value  
+//   this.brand = document.querySelector(`.brand-${item.id}`).value 
+//   this.imgSrc = document.querySelector(`.imgSrc-${item.id}`).value
+//   this.description = document.querySelector(`.description-${item.id}`).value       
+//   this.price = document.querySelector(`.price-${item.id}`).value 
+//    let index = displayContent.findIndex( f=>{
+//  return f.id === item.id
+// })
+// console.log(item.id, index);
+// newContent[index] = Object.assign({}, this)
+// localStorage.setItem('prodList',JSON.stringify(products))
+// displayProd()
+// }
+// }
+
+
+function editProd(id){
+  const form = document.querySelector(`#editProduct-${id}`);
+  const price = form.querySelector('#price')
+  const brand = form.querySelector('#brand')
+  const description = form.querySelector('#description')
+  const imgSrc = form.querySelector('#imgSrc')
+
+  console.log("Clicked Edit", id, price.value, brand.value, imgSrc.value, description.value)
+ 
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].id == id) {
+      products[i].price = parseFloat(price.value);
+      products[i].brand = brand.value;
+      products[i].description = description.value;
+      products[i].src = imgSrc.value;
+    }
   }
+  console.log(products) 
+  localStorage.setItem('prodList',JSON.stringify(products))
+  displayProd(); 
 }
 
 
@@ -158,6 +181,7 @@ let idProd = parseInt(alert("Product deleted"))
  let index = products.indexOf(target)
  console.log(index)
 products.splice(index,1) 
+localStorage.removeItem('prodList')
 console.log(products) 
 localStorage.setItem('prodList',JSON.stringify(products))
 displayProd(); 
