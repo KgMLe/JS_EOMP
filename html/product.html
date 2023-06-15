@@ -47,11 +47,11 @@
 
   <!-- ________________________________PRODUCTS PAGE CONTENT___________________________ -->
   <div class="container">
-    <div class="row">  
+    <div class="row" id="sortFilter">  
       <h2 class="display-2 text-lg-center" >Shop Our Collection</h2>
-      <form class="d-sm-inline" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
+      <form class="d-sm-table-row" role="search">
+        <input id="searchText" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit" onclick="search()">Search</button>
       </form>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,8 +59,8 @@
         </button>
         <br>
         <ul class="dropdown-menu">
-          <li><button class="dropdown-item" id="sortPrice">Price</button></li>
-          <li><button class="dropdown-item" id="sortAZ">A-Z</button></li>
+          <li><a class="dropdown-item" href="#" onclick="sortPrice()">Price</a></li>
+          <li><a class="dropdown-item" href="#" onclick="sortName()">Alphabet</a></li>
         </ul>
       </div>
     </div>
@@ -70,18 +70,32 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
-  <div id="contact">
-    <h2> <span>Contact Us</span> </h2>
-    <p>Phone: +277 654 3210</p>
-    <p>Location: 123 Street Avenue, Cape Town, South Africa</p>
-  </div>  
-  <div class="rounded-social-buttons">
-    <a class="social-button linkedin" href="https://www.linkedin.com/in/kgodisho-lebopa-0a319416a/?originalSubdomain=za" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a class="social-button instagram"href="https://www.instagram.com/kgodie/" target="_blank"><i class="fab fa-instagram"></i></a>
-</div>
-</footer>
+<footer class="footer-distributed">
 
+  <div class="footer-left">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>476 Street Ave</span> Parow, Cape Town</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+2721 234 5432</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@company.com">information@specs.co.za</a></p>
+    </div>
+    <div class="footer-icons">
+
+      <a  href="wwww.facebook.com"><i class="fab fa-facebook"></i></a>
+      <a href="www.twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+       <p class="footer-company-name">Specs © 2023</p>
+    </div>
+  </div>
+</footer>
 
  
 
