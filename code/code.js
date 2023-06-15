@@ -28,7 +28,7 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
     src: 'https://i.postimg.cc/26wQjpcX/16833593271408-removebg-preview.png', 
     brand: 'Police',
     description:'Geometric hexagonal frames',
-    price: 800,
+    price: 680,
 },
 {
     id: 5,
@@ -42,7 +42,7 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
     src: 'https://i.postimg.cc/c4c8KK39/image-removebg-preview.png', 
     brand: 'Polar',
     description:'Sleek and minimalist circular frames made from lightweight materials,',
-    price: 800
+    price: 899
 },
 
 {
@@ -50,7 +50,7 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
   src: 'https://i.postimg.cc/HLwtPvM3/image-1-removebg-preview.png', 
   brand: 'Vision',
   description:'Classic round shape with durable acetate frames and spring hinges for added flexibility',
-  price: 800
+  price: 600
 },
 
 {
@@ -66,7 +66,7 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
  src: 'https://i.postimg.cc/5N3dPKV7/666c2cce6f72699135ffcf-removebg-preview.png', 
  brand: 'Specs',
  description:'A look into our new limited edition collection',
- price: 800
+ price: 7750
 },
 
 {
@@ -74,11 +74,12 @@ let products = JSON.parse(localStorage.getItem('prodList')) ? JSON.parse(localSt
  src: 'https://i.postimg.cc/Tw50SQX1/16360764398588-1-removebg-preview.png', 
  brand: 'Opti Chic',
  description:'Bold cat-eye silhouette with high-quality metal frames',
- price: 800
+ price: 1800
 }
 ]));
-
 let divProducts = document.querySelector('#products');
+function renderProducts() {
+  divProducts.innerHTML = ""
 products.forEach((item)=> { 
   divProducts.innerHTML += `
 <div class="card" style="width: 18rem;">
@@ -100,44 +101,33 @@ products.forEach((item)=> {
   `
   localStorage.setItem('prodList',JSON.stringify(products))
 })
+}
+ renderProducts()
+
 // _____________________________________________________________________________
 //Filter and Sort for Products Page
 // Sort by price
-const showProd = products
-
-// const sortP = document.querySelector("#sortPrice")
-// sortP.addEventListener('click', sortPrice);
-
 function sortPrice(){
-   showProd.sort(
-    (p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0);
-    localStorage.setItem('prodList',JSON.stringify(products))
-    display (showProd)
+  products.sort(
+   (p2, p1) => (p2.price < p1.price) ? 1 : (p2.price > p1.price) ? -1 : 0);
+   renderProducts(products);
+   //console.log(showProd);
 }
 
 
 //sort by alphabet
 const sortAlphabet = document.querySelector("#sortAZ")
-sortAlphabet.addEventListener('click', sortAZ);
-function sortAZ(){
-  products.sort(function(a, b) {
-    const brandA = a.brand.toUpperCase(); 
-    const brandB = b.brand.toUpperCase(); 
-      
-  
-    if (brandA < brandB) {
-      return -1;
-    }
-    if (brandA > brandB) {
-      return 1;
-    }
 
-    return 0;
-  })
-
-console.log(products);
-localStorage.setItem('prodList',JSON.stringify(products))
+function sortName() {
+  products.sort(
+    (p1, p2) => (p1.brand < p2.brand) ? 1 : (p1.brand > p2.brand) ? -1 : 0);
+    renderProducts(products);
+    localStorage.setItem('prodList',JSON.stringify(products))
+   // console.log('sort az clicked');
 }
+
+
+
 
 // search button
 let searchBox = document.querySelector('#searchText');
@@ -150,11 +140,12 @@ function search() {
       );
     });
 
-    display(showProd);
+    renderProducts(showProd);
   } catch (error) {
-    console.error('An error occurred while searching:', error);
+    alert('Product not found');
   }
   localStorage.setItem('prodList',JSON.stringify(products))
+ // console.log('search  clicked');
 }
 
 
